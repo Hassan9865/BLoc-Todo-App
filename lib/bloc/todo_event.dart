@@ -10,3 +10,9 @@ class RemoveTodo extends TodoEvent {
 
   RemoveTodo({required this.id});
 }
+
+class updatedTodo extends TodoEvent {
+  final String id;
+
+  updatedTodo({required this.id});
+}

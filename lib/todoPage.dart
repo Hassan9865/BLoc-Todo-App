@@ -38,13 +38,19 @@ class Todopage extends StatelessWidget {
                       final todo = state.todos[index];
                       return ListTile(
                         title: Text(todo.description),
-                        trailing: IconButton(
-                            onPressed: () {
-                              context
-                                  .read<TodoBloc>()
-                                  .add(RemoveTodo(id: todo.id));
-                            },
-                            icon: Icon(Icons.delete)),
+                        trailing: Row(
+                          children: [
+                            IconButton(
+                                onPressed: () {}, icon: Icon(Icons.edit)),
+                            IconButton(
+                                onPressed: () {
+                                  context
+                                      .read<TodoBloc>()
+                                      .add(RemoveTodo(id: todo.id));
+                                },
+                                icon: Icon(Icons.delete)),
+                          ],
+                        ),
                       );
                     });
               } else {

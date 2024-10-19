@@ -1,4 +1,5 @@
 import 'package:bloc_todo_app/bloc/todo_bloc.dart';
+import 'package:bloc_todo_app/cubit/todo_cubit.dart';
 import 'package:bloc_todo_app/todoPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: BlocProvider(
-          create: (context) => TodoBloc(),
+          create: (context) => TodoCubit(),
           child: Todopage(),
         ));
   }
